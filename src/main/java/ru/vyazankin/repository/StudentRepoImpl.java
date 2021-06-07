@@ -32,11 +32,16 @@ public class StudentRepoImpl implements StudentRepo {
 
     @Override
     public List<Student> findAll() {
-        return (List<Student>) session.createQuery("s from Student s").list();
+        return (List<Student>) session.createQuery("from Student").list();
     }
 
     @Override
     public void deleteById(Long id) {
         session.createQuery("delete from Student s where s.id = :id").setLong("id", id).executeUpdate();
+    }
+
+    @Override
+    public Long countAll() {
+        return (Long) session.createQuery("select count(s) from Student s").uniqueResult();
     }
 }

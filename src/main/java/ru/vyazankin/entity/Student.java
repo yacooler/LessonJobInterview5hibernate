@@ -1,9 +1,12 @@
 package ru.vyazankin.entity;
 
+import lombok.Data;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "student")
+@Data
 public class Student {
 
     @Id

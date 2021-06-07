@@ -1,12 +1,13 @@
 package ru.vyazankin;
 
 import org.flywaydb.core.Flyway;
-import ru.vyazankin.entity.Student;
+
 
 public class MainApp {
 
     public static void main(String[] args) {
         flyAway();
+        new StudentsTest().startTest();
     }
 
     private static void flyAway(){
@@ -14,11 +15,6 @@ public class MainApp {
         flyway.migrate();
     }
 
-    private static void addStudents(){
-        for (int i = 0; i < 1000; i++) {
-            Student student = new Student("Student" + i, (int) Math.floor(Math.random() * 10F));
 
-        }
-    }
 
 }

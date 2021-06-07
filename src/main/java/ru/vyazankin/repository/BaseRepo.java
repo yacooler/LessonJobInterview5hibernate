@@ -11,6 +11,6 @@ public interface BaseRepo <T, I>{
     T update(T entity);
     T save(T entity);
     void deleteById(I id);
-
+    Long countAll();
     List<T> findAll();
 }
